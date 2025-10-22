@@ -7,6 +7,6 @@ public class GeneradorTextos {
         OutputStream outStream = System.out;
         PrintWriter printWriter = new PrintWriter(outStream, true);
 
-        printWriter.println("Hola");
+        // String.CharAT(Sorteo)
     }
-}
+}//lfkjsdalkfjaslkjf
