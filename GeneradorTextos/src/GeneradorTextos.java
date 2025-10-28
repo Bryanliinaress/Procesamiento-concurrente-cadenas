@@ -11,9 +11,7 @@ public class GeneradorTextos {
         String abecedario = "abcdefghijklmnopqrstuvwxyz";
         OutputStream os = System.out;
         PrintWriter pw = new PrintWriter(os, true);
-        System.out.println("Proceso generador de texto");
-        System.out.println();
-        System.out.println();
+        
         /*Aquí cojo el codigo de CrearMúltiplesAccesos.java para redirigir las salidas al fichero javalog.txt
         y ver como va funcionando el programa.
         */
@@ -31,6 +29,9 @@ public class GeneradorTextos {
             System.err.println(e.toString());
         }
 
+        
+        System.out.println("Proceso generador de texto");
+        System.out.println("=========================");
         System.out.println("Generando texto aleatorio...");
         for (int i = 0; i < 15; i++) {
             // variable para hacer que el texto sea de minimo 5 caracteres y maximo 15

@@ -15,9 +15,6 @@ public class ContadorCaracteres {
         // Obtenemos el stream de lectura de la entrada estándar
         // utilizamos un lector con Buffered, para no perder ningún dato
 
-        System.out.println("Contador de caracteres por línea");
-        System.out.println();
-        System.out.println();
         OutputStream os = System.out;
         PrintWriter pw = new PrintWriter(os, true);
         String lineaTeclado = null;
@@ -38,10 +35,12 @@ public class ContadorCaracteres {
             System.err.println(e.toString());
         }
 
+        System.out.println("Proceso contador de caracteres");
+        System.out.println("==============================");
         try {
-            System.out.println("Proceso lector");
             // Mostramos que el proceso que está escribiendo es el que está
             // leyendo los datos.
+            
             while ((lineaTeclado = bf.readLine()) != null) {
                 //Aqui leemos solo las lineas que tienen entre 5 y 15 caracteres
                 if (lineaTeclado.length()>=5 && lineaTeclado.length()<=15) {
