@@ -18,10 +18,12 @@ public class ContadorVocales {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader bf = new BufferedReader(isr);
 
-        /*Aquí cojo el codigo de CrearMúltiplesAccesos.java para redirigir las salidas al fichero javalog.txt
-        y ver como va funcionando el programa.
-        */
-        // Redirigir salidas a javalog.txt 
+        /*
+         * Aquí cojo el codigo de CrearMúltiplesAccesos.java para redirigir las salidas
+         * al fichero javalog.txt
+         * y ver como va funcionando el programa.
+         */
+        // Redirigir salidas a javalog.txt
         try {
             // Redirigimos salida estándar y de error a un fichero
             PrintStream ps = new PrintStream(
@@ -35,13 +37,15 @@ public class ContadorVocales {
             System.err.println(e.toString());
         }
 
-        System.out.println("Proceso contador de vocales");
-        System.out.println("=========================");
-        System.out.println("Contando vocales...");
         try {
+            Thread.sleep(1000); 
+            System.out.println("Proceso contador de vocales");
+            System.out.println("=========================");
+            System.out.println("Contando vocales...");
             while ((lineaTeclado = bf.readLine()) != null) {
-                //Aqui leemos solo las lineas que tienen entre 5 y 18 caracteres para admitir la "," y el numero
-                if (lineaTeclado.length()>=5 && lineaTeclado.length()<=18) {
+                // Aqui leemos solo las lineas que tienen entre 5 y 18 caracteres para admitir
+                // la "," y el numero
+                if (lineaTeclado.length() >= 5 && lineaTeclado.length() <= 18) {
                     int contadorVocales = 0;
                     for (int i = 0; i < lineaTeclado.length(); i++) {
                         char letraActual = lineaTeclado.charAt(i);
@@ -55,7 +59,9 @@ public class ContadorVocales {
                     String[] separarFrase = lineaTeclado.split(",");
                     System.out.println(lineaTeclado + "," + contadorVocales + "," + letras.toString());
                     System.out.println();
-                    pw.println("Texto leído: " +azul+ separarFrase[0]+reset+". Número de Caracteres: " +azul+ separarFrase[1]+reset+ ". Número de vocales: " +rojo+ contadorVocales+reset+ ". Vocales leídas: " +rojo+ letras+reset+ "." );
+                    pw.println("Texto leído: " + azul + separarFrase[0] + reset + ". Número de Caracteres: " + azul
+                            + separarFrase[1] + reset + ". Número de vocales: " + rojo + contadorVocales + reset
+                            + ". Vocales leídas: " + rojo + letras + reset + ".");
                     pw.println();
                     letras.clear();
                 }
@@ -65,11 +71,11 @@ public class ContadorVocales {
             System.err.println(ex.toString());
         }
     }
-    //color azul
+
+    // color azul
     static final String azul = "\u001B[34m";
-    //color rojo
+    // color rojo
     static final String rojo = "\u001B[31m";
-    //color reset
+    // color reset
     static final String reset = "\u001B[0m";
 }
-

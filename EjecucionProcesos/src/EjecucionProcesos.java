@@ -29,7 +29,7 @@ public class EjecucionProcesos {
         }
 
         System.out.println("Proceso ejecutor de procesos.");
-        System.out.println("=============================");
+        System.out.println("============================="); 
         String[] comando;
         try {
             for (int i = 0; i < numInstancias; i++) {
@@ -42,7 +42,7 @@ public class EjecucionProcesos {
                 comando = comandoString.split(" ");
                 Runtime.getRuntime().exec(comando);
                 timeThread = new Thread();
-                Thread.sleep(2000); // Esperamos 5 segundos entre la ejecución de cada proceso
+                Thread.sleep(2000); 
             }
         } catch (SecurityException ex) {
             System.err.println(

@@ -18,10 +18,12 @@ public class ContadorCaracteres {
         OutputStream os = System.out;
         PrintWriter pw = new PrintWriter(os, true);
         String lineaTeclado = null;
-        /*Aquí cojo el codigo de CrearMúltiplesAccesos.java para redirigir las salidas al fichero javalog.txt
-        y ver como va funcionando el programa.
-        */
-        // Redirigir salidas a javalog.txt 
+        /*
+         * Aquí cojo el codigo de CrearMúltiplesAccesos.java para redirigir las salidas
+         * al fichero javalog.txt
+         * y ver como va funcionando el programa.
+         */
+        // Redirigir salidas a javalog.txt
         try {
             // Redirigimos salida estándar y de error a un fichero
             PrintStream ps = new PrintStream(
@@ -35,18 +37,19 @@ public class ContadorCaracteres {
             System.err.println(e.toString());
         }
 
-        System.out.println("Proceso contador de caracteres");
-        System.out.println("==============================");
         try {
+            Thread.sleep(500); 
+            System.out.println("Proceso contador de caracteres");
+            System.out.println("==============================");
             // Mostramos que el proceso que está escribiendo es el que está
             // leyendo los datos.
-            
+
             while ((lineaTeclado = bf.readLine()) != null) {
-                //Aqui leemos solo las lineas que tienen entre 5 y 15 caracteres
-                if (lineaTeclado.length()>=5 && lineaTeclado.length()<=15) {
-                System.out.println("Número de caracteres leídos: " + lineaTeclado.length());
-                System.out.println(lineaTeclado + "," + lineaTeclado.length());
-                pw.println(lineaTeclado+"," + lineaTeclado.length());
+                // Aqui leemos solo las lineas que tienen entre 5 y 15 caracteres
+                if (lineaTeclado.length() >= 5 && lineaTeclado.length() <= 15) {
+                    System.out.println("Número de caracteres leídos: " + lineaTeclado.length());
+                    System.out.println(lineaTeclado + "," + lineaTeclado.length());
+                    pw.println(lineaTeclado + "," + lineaTeclado.length());
                 }
             }
         } catch (IOException ex) {
